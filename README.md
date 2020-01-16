@@ -11,7 +11,7 @@
                 <executions>
                     <execution>
                         <goals>
-                            <goal>verify</goal>
+                            <goal>detekt</goal>
                         </goals>
                     </execution>
                 </executions>
