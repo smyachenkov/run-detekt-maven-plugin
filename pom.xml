@@ -114,6 +114,13 @@
         </plugins>
     </build>
 
+    <distributionManagement>
+        <repository>
+            <id>run-detekt-maven-plugin</id>
+            <url>https://api.bintray.com/maven/smyachenkov/maven-plugins/run-detekt-maven-plugin/;publish=1</url>
+        </repository>
+    </distributionManagement>
+
     <repositories>
         <repository>
             <id>jcenter</id>
