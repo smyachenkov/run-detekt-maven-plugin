@@ -6,7 +6,7 @@
 
     <groupId>com.smyachenkov</groupId>
     <artifactId>run-detekt-maven-plugin</artifactId>
-    <version>1.4.0</version>
+    <version>1.4.0.1</version>
     <packaging>maven-plugin</packaging>
 
     <name>run-detekt maven plugin</name>
