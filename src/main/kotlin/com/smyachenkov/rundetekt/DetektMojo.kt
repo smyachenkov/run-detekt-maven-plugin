@@ -1,11 +1,13 @@
 package com.smyachenkov.rundetekt
 
+import com.smyachenkov.ConfigLocator
 import io.gitlab.arturbosch.detekt.cli.CliArgs
 import io.gitlab.arturbosch.detekt.cli.runners.Runner
 import org.apache.maven.plugin.AbstractMojo
 import org.apache.maven.plugins.annotations.LifecyclePhase
 import org.apache.maven.plugins.annotations.Mojo
 import org.apache.maven.plugins.annotations.Parameter
+import org.apache.maven.project.MavenProject
 
 @Mojo(name = "detekt", defaultPhase = LifecyclePhase.VERIFY)
 class DetektMojo : AbstractMojo() {
@@ -70,14 +72,18 @@ class DetektMojo : AbstractMojo() {
     @Parameter(property = "detekt.report")
     private val report: String? = null
 
+    @Parameter(defaultValue = "\${project}", readonly = true)
+    var mavenProject: MavenProject? = null
+
     override fun execute() {
+        val resolvedConfigPath = ConfigLocator(mavenProject, config).findPath()
         val cliArgs = CliArgs.parse(
                 mutableListOf<String>().apply {
                     addParam("--auto-correct", autoCorrect)
                     addParam("--baseline", baseline)
                     addFlag("--build-upon-default-config", buildUponDefaultConfig)
                     addParam("--classpath", classpath)
-                    addParam("--config", config)
+                    addParam("--config", resolvedConfigPath)
                     addParam("--config-resource", configResource)
                     addFlag("--create-baseline", createBaseline)
                     addFlag("--debug", debug)
