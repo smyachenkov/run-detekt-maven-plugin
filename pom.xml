@@ -23,7 +23,7 @@
         <dependency>
             <groupId>io.gitlab.arturbosch.detekt</groupId>
             <artifactId>detekt-cli</artifactId>
-            <version>${version}</version>
+            <version>${detekt.version}</version>
             <exclusions>
                 <exclusion>
                     <artifactId>jcommander</artifactId>
