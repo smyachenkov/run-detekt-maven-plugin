@@ -22,7 +22,7 @@ class ConfigLocator(private val mavenProject: MavenProject?,
 
     private fun List<Resource>.findFile(fileName: String): String? {
         return this.map {
-            Paths.get(it.directory + File.separator + configPath)
+            Paths.get(it.directory + File.separator + fileName)
         }.filter {
             Files.exists(it)
         }.map {
