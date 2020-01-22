@@ -7,7 +7,7 @@
             <plugin>
                 <groupId>com.smyachenkov</groupId>
                 <artifactId>run-detekt-maven-plugin</artifactId>
-                <version>1.4</version>
+                <version>1.4.0.2</version>
                 <executions>
                     <execution>
                         <goals>
