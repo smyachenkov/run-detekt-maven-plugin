@@ -8,9 +8,34 @@
     <artifactId>run-detekt-maven-plugin</artifactId>
     <version>1.4.0.2</version>
     <packaging>maven-plugin</packaging>
-
     <name>run-detekt maven plugin</name>
     <description>Detekt maven plugin</description>
+    <url>https://github.com/smyachenkov/run-detekt-maven-plugin</url>
+
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <id>smyachenkov</id>
+            <name>Stanislav Myachenkov</name>
+            <email>smyachenkov@gmail.com</email>
+            <url>http://www.smyachenkov.com/</url>
+            <roles>
+                <role>developer</role>
+            </roles>
+            <timezone>Europe/Moscow</timezone>
+        </developer>
+    </developers>
+
+    <scm>
+        <url>https://github.com/smyachenkov</url>
+    </scm>
 
     <properties>
         <detekt.version>1.4.0</detekt.version>
