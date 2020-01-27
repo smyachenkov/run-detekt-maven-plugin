@@ -51,8 +51,12 @@
             <version>${detekt.version}</version>
             <exclusions>
                 <exclusion>
-                    <artifactId>jcommander</artifactId>
+                    <groupId>org.jetbrains.kotlinx</groupId>
+                    <artifactId>kotlinx-html-jvm</artifactId>
+                </exclusion>
+                <exclusion>
                     <groupId>com.beust</groupId>
+                    <artifactId>jcommander</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
