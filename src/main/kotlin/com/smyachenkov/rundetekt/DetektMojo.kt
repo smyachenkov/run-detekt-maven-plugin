@@ -2,6 +2,7 @@ package com.smyachenkov.rundetekt
 
 import com.smyachenkov.ConfigLocator
 import io.gitlab.arturbosch.detekt.cli.CliArgs
+import io.gitlab.arturbosch.detekt.cli.parseArguments
 import io.gitlab.arturbosch.detekt.cli.runners.Runner
 import org.apache.maven.plugin.AbstractMojo
 import org.apache.maven.plugins.annotations.LifecyclePhase
@@ -72,12 +73,18 @@ class DetektMojo : AbstractMojo() {
     @Parameter(property = "detekt.report")
     private val report: String? = null
 
+    @Parameter(property = "detekt.run-rule")
+    private val runRule: String? = null
+
+    @Parameter(property = "detekt.print-ast")
+    private val printAst: Boolean = false
+
     @Parameter(defaultValue = "\${project}", readonly = true)
     var mavenProject: MavenProject? = null
 
     override fun execute() {
         val resolvedConfigPath = ConfigLocator(mavenProject, config).findPath()
-        val cliArgs = CliArgs.parse(
+        val cliArgs = parseArguments<CliArgs>(
                 mutableListOf<String>().apply {
                     addParam("--auto-correct", autoCorrect)
                     addParam("--baseline", baseline)
@@ -99,9 +106,13 @@ class DetektMojo : AbstractMojo() {
                     addFlag("--parallel", parallel)
                     addParam("--plugins", plugins)
                     addParam("--report", report)
-                }.toTypedArray()
+                    addParam("--run-rule", runRule)
+                    addFlag("--print-ast", printAst)
+                }.toTypedArray(),
+                System.out,
+                System.err
         )
-        Runner(cliArgs).execute()
+        Runner(cliArgs, System.out, System.err).execute()
     }
 
     private fun MutableList<String>.addParam(paramName: String, value: String?) {
