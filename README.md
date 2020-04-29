@@ -1,6 +1,6 @@
 # __run-detekt__
 
-**run-detekt** is the Maven plugin which allows to use [detekt](https://github.com/arturbosch/detekt) code analysis tool from Maven.
+**run-detekt** is the Maven plugin which allows to use [detekt](https://github.com/detekt/detekt) code analysis tool from Maven.
 
 ## How to use
 ```xml
