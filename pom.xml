@@ -4,7 +4,7 @@
 
     <groupId>com.smyachenkov</groupId>
     <artifactId>run-detekt-maven-plugin</artifactId>
-    <version>1.9.2-SNAPSHOT</version>
+    <version>1.9.1</version>
     <packaging>maven-plugin</packaging>
     <name>run-detekt maven plugin</name>
     <description>Detekt maven plugin</description>
