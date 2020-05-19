@@ -4,7 +4,7 @@
 
     <groupId>com.smyachenkov</groupId>
     <artifactId>run-detekt-maven-plugin</artifactId>
-    <version>1.7.4</version>
+    <version>1.9.1-SNAPSHOT</version>
     <packaging>maven-plugin</packaging>
     <name>run-detekt maven plugin</name>
     <description>Detekt maven plugin</description>
@@ -38,7 +38,7 @@
   </scm>
 
     <properties>
-        <detekt.version>1.7.4</detekt.version>
+        <detekt.version>1.9.1</detekt.version>
         <kotlin.version>1.3.70</kotlin.version>
         <junit-jupiter.version>5.4.2</junit-jupiter.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
