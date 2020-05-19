@@ -4,7 +4,7 @@
 
     <groupId>com.smyachenkov</groupId>
     <artifactId>run-detekt-maven-plugin</artifactId>
-    <version>1.9.1</version>
+    <version>1.9.2-SNAPSHOT</version>
     <packaging>maven-plugin</packaging>
     <name>run-detekt maven plugin</name>
     <description>Detekt maven plugin</description>
@@ -34,7 +34,7 @@
     <scm>
         <url>https://github.com/smyachenkov</url>
         <connection>scm:git:git@github.com:smyachenkov/run-detekt-maven-plugin.git</connection>
-      <tag>run-detekt-maven-plugin-1.9.1</tag>
+      <tag>HEAD</tag>
   </scm>
 
     <properties>
